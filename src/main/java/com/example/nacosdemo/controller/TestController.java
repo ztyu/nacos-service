@@ -12,10 +12,7 @@ import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration;
 import org.springframework.cloud.openfeign.FeignAutoConfiguration;
 import org.springframework.cloud.openfeign.ribbon.FeignRibbonClientAutoConfiguration;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -26,7 +23,7 @@ import javax.annotation.Resource;
  **/
 @RestController
 @RequestMapping(value = "discovery")
-@ImportAutoConfiguration({RibbonAutoConfiguration.class, FeignRibbonClientAutoConfiguration.class, FeignAutoConfiguration.class})
+//@ImportAutoConfiguration({RibbonAutoConfiguration.class, FeignRibbonClientAutoConfiguration.class, FeignAutoConfiguration.class})
 public class TestController {
 
     @Resource
@@ -52,6 +49,7 @@ public class TestController {
     @GetMapping("/feginTest")
     @ResponseBody
     public String feginTest () {
+
         return echoService.echo();
     }
 

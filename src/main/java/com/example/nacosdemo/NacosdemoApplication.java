@@ -13,7 +13,7 @@ import org.springframework.cloud.openfeign.ribbon.FeignRibbonClientAutoConfigura
 @SpringBootApplication
 @EnableFeignClients(basePackages = {"com.example.nacosdemo.service"})
 @NacosConfigurationProperties(dataId = "testService", autoRefreshed = true, ignoreNestedProperties = true, type = ConfigType.YAML)
-//@ImportAutoConfiguration({RibbonAutoConfiguration.class, FeignRibbonClientAutoConfiguration.class, FeignAutoConfiguration.class})
+@ImportAutoConfiguration({RibbonAutoConfiguration.class, FeignRibbonClientAutoConfiguration.class, FeignAutoConfiguration.class})
 public class NacosdemoApplication {
 
     public static void main(String[] args) {
